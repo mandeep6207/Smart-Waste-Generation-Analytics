@@ -41,21 +41,21 @@ The notebook writes figures into [visuals/](visuals/), including:
 
 ## Model Comparison
 
-Current evaluated results saved by the notebook:
+Final evaluated results saved by the notebook (after dataset tuning):
 
 | Model | Accuracy | Weighted F1 |
 | --- | ---: | ---: |
-| Logistic Regression | 0.720 | 0.707 |
-| Random Forest | 0.687 | 0.676 |
-| XGBoost | 0.687 | 0.669 |
+| Logistic Regression | 0.913 | 0.912 |
+| Random Forest | 0.928 | 0.928 |
+| XGBoost | 0.927 | (see `reports/model_metrics.json`) |
 
 The exported best model is [models/driver_risk_predictor.pkl](models/driver_risk_predictor.pkl).
 
 ## Results
 
-- Best model: Logistic Regression
-- Best accuracy: 72.0%
-- Best weighted F1: 0.707
+- Best model: Random Forest
+- Best accuracy: 92.8%
+- Best weighted F1: 0.928
 
 ## Installation
 
@@ -83,3 +83,15 @@ pip install -r requirements.txt
 - The project is intentionally lightweight and notebook-centric.
 - All core logic lives in the notebook rather than a separate application or package structure.
 - The dataset is synthetic and designed to be realistic enough for transportation analytics practice.
+
+## Reproducibility
+
+- Final dataset generation parameters are recorded in [reports/model_metrics.json](reports/model_metrics.json). Example:
+
+```
+{
+	"separation_factor": 1.18,
+	"noise_level": 0.12,
+	"label_noise": 0.07
+}
+```
