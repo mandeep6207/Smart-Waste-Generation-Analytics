@@ -1,23 +1,39 @@
 # DriveSafe AI Project Report
 
 ## Summary
-- Best model: Logistic Regression
-- Best accuracy: 0.720
-- Best weighted F1: 0.707
+
+- Best model: Random Forest
+- Best accuracy: 0.928
+- Best weighted F1: 0.9276
 
 ## Dataset
+
 - Rows: 5000
-- Columns: 20
+- Columns: 15 (final cleaned)
 - Target classes: Safe, Moderate Risk, High Risk
 
-## Model Comparison
-              model  accuracy  weighted_f1
-Logistic Regression     0.720     0.706989
-            XGBoost     0.687     0.669291
-      Random Forest     0.687     0.676121
+## Generation Parameters
+
+- `separation_factor`: 1.18
+- `noise_level`: 0.12
+- `label_noise`: 0.07
+
+## Model Comparison (final run)
+
+| Model | Accuracy | Weighted F1 |
+| --- | ---: | ---: |
+| Logistic Regression | 0.913 | 0.9124 |
+| Random Forest | 0.928 | 0.9276 |
+| XGBoost | 0.927 | (see metrics file) |
 
 ## Generated Artifacts
-- Dataset: d:\Driver Risk Score Analysis\data\driver_risk_dataset.csv
-- Metrics: d:\Driver Risk Score Analysis\reports\model_metrics.json
-- Model: d:\Driver Risk Score Analysis\models\driver_risk_predictor.pkl
-- Visuals directory: d:\Driver Risk Score Analysis\visuals
+
+- Dataset: data/driver_risk_dataset.csv
+- Metrics: reports/model_metrics.json
+- Model: models/driver_risk_predictor.pkl
+- Visuals directory: visuals/
+
+## Notes
+
+- The dataset is synthetic and tuned to produce a realistic classification task with controlled overlap between classes. Label noise and feature noise were introduced to avoid deterministic separability.
+- The notebook `notebooks/drivesafe_analysis.ipynb` includes the full pipeline to reproduce these results.
