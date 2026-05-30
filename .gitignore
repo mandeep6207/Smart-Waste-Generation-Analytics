@@ -7,9 +7,3 @@ venv/
 *.pyo
 *.pyd
 .DS_Store
-models/*.pkl
-models/*.joblib
-reports/*.json
-reports/*.md
-visuals/*.png
-data/driver_risk_dataset.csv
